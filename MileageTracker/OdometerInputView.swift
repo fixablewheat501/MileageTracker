@@ -30,13 +30,22 @@ struct OdometerInputView: View {
                 .liquidGlassStyle()
                 .buttonStyle(.plain)
                 .disabled(Double(odoInput) == nil)
+                .foregroundColor(.white)
                 
                 Spacer()
             }
             .padding()
             .background(Color.black.ignoresSafeArea())
             .foregroundColor(.white)
-            .navigationTitle("Odometer Input")
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Odometer Reading Required")
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+                        .fontWeight(.semibold)
+                }
+            }
         }
     }
 }
